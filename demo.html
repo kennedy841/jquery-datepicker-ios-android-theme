@@ -21,7 +21,7 @@
     <style type="text/css">
         body {
             font-family: arial, verdana, sans-serif;
-            font-size: 12px;
+            /* font-size: 12px; */
         }
         .dww img {
             width: 30px;
@@ -32,6 +32,13 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            // Date mobiscroll-picker
+            $('#pdate').scroller();
+            // Time
+            $('#ptime').scroller({ preset: 'time' });
+            // Datetime
+            $('#pdatetime').scroller({ preset: 'datetime' });
+
             // Date with external button
             $('#date1').scroller();
             // Time
@@ -66,7 +73,27 @@
 </head>
 
 <body>
-    <div data-role="page" data-theme="b" id="jqm-home">
+
+    <div data-role="page" data-theme="b" id="picker-demo">
+        <div data-role="header" data-theme="a">
+            <h1>Picker demo</h1>
+            <a href="#demo-home" class="ui-btn-right" data-icon="arrow-r" data-theme="b">Main demo</a>
+        </div>
+
+        <div data-role="content" data-theme="d">
+            <label for="apdate">Pick a date</label>
+            <a id="apdate" href="#" data-role="button" data-icon="grid" data-iconpos="right"
+                onclick="$('#pdate').scroller('show')">date picker</a>
+            <label for="aptime">Pick a time</label>
+            <a id="aptime" href="#" data-role="button" data-icon="grid" data-iconpos="right"
+                onclick="$('#ptime').scroller('show')">time picker</a>
+            <label for="apdatetime">Pick a date and time</label>
+            <a id="apdatetime" href="#" data-role="button" data-icon="grid" data-iconpos="right"
+                onclick="$('#pdatetime').scroller('show')">datetime picker</a>
+        </div>
+    </div>
+
+    <div data-role="page" data-theme="b" id="demo-home">
         <div data-role="header" data-theme="a">
             <h1>Mobiscroll</h1>
         </div>
@@ -116,5 +143,14 @@
             </form>
         </div>
     </div>
+
+    <div data-role="page" data-theme="b" id="demo-hidden">
+        <div data-role="content" data-theme="d">
+          <input type="text" name="pdate" id="pdate" class="mobiscroll" />
+          <input type="text" name="ptime" id="ptime" class="mobiscroll" />
+          <input type="text" name="pdatetime" id="pdatetime" class="mobiscroll" />
+        </div>
+    </div>
+
 </body>
 </html>
