@@ -88,24 +88,48 @@
       $(id).scroller({ preset: 'datetime', dateFormat: "dd-mm-yy", timeFormat: 'H:ii', ampm: false, dateOrder: "ddmmyy" });
     }
 
-    function show_datepicker(id, d) {
+    function show_datepicker(id, d, cb) {
+      var mycb = function() {
+        var d2 = $(id).scroller('getDate');
+        $(id).unbind('change', mycb);
+        if (!!cb) cb(d2);
+      };
+
+      $(id).bind('change', mycb);
+
       var yr = d.getFullYear();
-      var mo = d.getMonth();
+      var mo = d.getMonth() + 1;
       var da = d.getDate();
       $(id).attr("value", (da < 10 ? "0" : "") + da + (mo < 10 ? "-0" : "-") + mo  + '-' + yr)
       $(id).scroller('show');
     }
 
-    function show_timepicker(id, d) {
+    function show_timepicker(id, d, cb) {
+      var mycb = function() {
+        var d2 = $(id).scroller('getDate');
+        $(id).unbind('change', mycb);
+        if (!!cb) cb(d2);
+      };
+
+      $(id).bind('change', mycb);
+
       var hr = d.getHours();
       var min = d.getMinutes();
       $(id).attr("value", "" + hr + ":" +  (min < 10 ? "0" : "") + min);
       $(id).scroller('show');
     }
 
-    function show_datetimepicker(id, d) {
+    function show_datetimepicker(id, d, cb) {
+      var mycb = function() {
+        var d2 = $(id).scroller('getDate');
+        $(id).unbind('change', mycb);
+        if (!!cb) cb(d2);
+      };
+
+      $(id).bind('change', mycb);
+
       var yr = d.getFullYear();
-      var mo = d.getMonth();
+      var mo = d.getMonth() + 1;
       var da = d.getDate();
       var hr = d.getHours();
       var min = d.getMinutes();
@@ -116,23 +140,45 @@
 
     /* window functions: */
 
+    var mydate = new Date(2012, 4-1, 9);
+
+    var mytime = new Date();
+    mytime.setHours(9);
+    mytime.setMinutes(5);
+
+    var mydatetime = new Date(2012, 4 - 1, 9);
+    mydatetime.setHours(9);
+    mydatetime.setMinutes(5);
+
     function mydatepicker() {
-      var d = new Date(2012, 4, 9);
-      show_datepicker('#pdate', d);
+      show_datepicker('#pdate', mydate, function(d) {
+        mydate = d;
+        var yr = d.getFullYear();
+        var mo = d.getMonth() + 1;
+        var da = d.getDate();
+        $("#adate").html( (da < 10 ? "0" : "") + da + (mo < 10 ? "-0" : "-") + mo  + '-' + yr);
+      });
     }
 
     function mytimepicker() {
-      var d = new Date();
-      d.setHours(9);
-      d.setMinutes(5);
-      show_timepicker('#ptime', d);
+      show_timepicker('#ptime', mytime, function(d) {
+        mytime = d;
+        var hr = d.getHours();
+        var min = d.getMinutes();
+        $("#atime").html("" + hr + ":" +  (min < 10 ? "0" : "") + min);
+      });
     }
 
     function mydatetimepicker() {
-      var d = new Date(2012, 4, 9);
-      d.setHours(9);
-      d.setMinutes(5);
-      show_datetimepicker('#pdatetime', d);
+      show_datetimepicker('#pdatetime', mydatetime, function(d) {
+        mydatetime = d;
+        var yr = d.getFullYear();
+        var mo = d.getMonth() + 1;
+        var da = d.getDate();
+        var hr = d.getHours();
+        var min = d.getMinutes();
+        $("#adatetime").html( (da < 10 ? "0" : "") + da + (mo < 10 ? "-0" : "-") + mo  + '-' + yr + " " + hr + ":" +  (min < 10 ? "0" : "") + min);
+      });
     }
 
     </script>
@@ -149,14 +195,14 @@
         <div data-role="content" data-theme="d">
             <label for="apdate">Pick a date</label>
             <a id="apdate" href="#" data-role="button" data-icon="grid" data-iconpos="right"
-                onclick="mydatepicker()">date picker</a>
+                onclick="mydatepicker()"><div id="adate">09-04-2012</div></a>
             <label for="aptime">Pick a time</label>
             <a id="aptime" href="#" data-role="button" data-icon="grid" data-iconpos="right"
-                onclick="mytimepicker()">time picker</a>
+                onclick="mytimepicker()"><div id="atime">9:05</div></a>
             <label for="apdatetime">Pick a date and time</label>
             <a id="apdatetime" href="#" data-role="button" data-icon="grid" data-iconpos="right"
-                onclick="mydatetimepicker()">date-time picker</a>
-            <a href="#demo-hidden" data-role="button" data-icon="arrow-r" data-iconpos="right">Main demo</a>
+                onclick="mydatetimepicker()"><div id="adatetime">09-04-2012 9:05</div></a>
+            <a href="#demo-hidden" data-role="button" data-icon="arrow-r" data-iconpos="right">Hidden fields</a>
         </div>
     </div>
 
