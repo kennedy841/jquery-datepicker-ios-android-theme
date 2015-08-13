@@ -8,41 +8,33 @@ What's new:
 
 1. IOS8 style support (Breathing the fresh air once again)
 2. Multilanguage (Simplified Chinese added)
-3. Fix a bunch of bugs (See below)
+3. Zepto compatible
+4. Fix a bunch of bugs (See below)
 
-Please check demo_without_jqueryui.html for more details.
+Please check [Demo Page](https://htmlpreview.github.io/?https://github.com/chuyik/jquery-datepicker-ios-android-theme/blob/scroll-picker/demo_without_jqueryui.html) and [demo_without_jqueryui.html](./demo_without_jqueryui.html) for more details.
 
-## scroll-picker fork
+## Look like sh*t or not
 
-The mobiscroll is a great project, and I wanted to use the mobiscroller together with a JQueryMobile anchor button instead of an input field. Unfortunately the scroller is hard-coded to bind to the focus event and it will take some modifications to bind to the click event instead. As a quick workaround, I was able to put the date/time input elements on a hidden page and then bind the anchor button click events to open the scroller.
+### IOS
+<img width="400" alt="qq20150813-4 2x" src="https://cloud.githubusercontent.com/assets/6262943/9249453/96f9b328-41f7-11e5-8d52-fcfa336ff559.png">
 
-I am actually using Cordova/PhoneGap with the native DatePicker plugin for a project, but it will not work for a web test version. For a quick replacement, I was able to define some functions to open the mobiscroll date/time pickers and receive a callback when the date is selected. I put a test in demo.html to show the mobiscroll date/time pickers working with the anchor buttons.
+### Android ICS
+<img width="400" alt="qq20150813-5 2x" src="https://cloud.githubusercontent.com/assets/6262943/9249465/ae1fef0e-41f7-11e5-9455-9b8faf005302.png">
 
-I believe there will be some cases when it may be useful to use the mobiscroller without binding to a document element, especially for projects that are not using JQuery. One example I thought of right now is using MGWT or GWT-Mobile, which are two different library frameworks that compile Java to Javascript. I think the mobiscroll project can become more beneficial by providing a solution that does not require binding to a JQuery element.
+### Android ICS Light
+<img width="400" alt="qq20150813-6 2x" src="https://cloud.githubusercontent.com/assets/6262943/9249554/7cd85552-41f8-11e5-92c0-36fa727acf3b.png">
 
-## About Mobiscroll
-
-A wheel scroller user control optimized for touchscreens to easily enter date and/or time. The control can easily be customized to support any custom values and can even be used as an intuitive alternative to the native select control (dropdown list). It is designed to be used on touch devices as an alternative to the jQuery UI date picker.
-
-The control is themable. You can easily change the appearance of if in CSS. It also comes with pre-defined, nice looking skins (Default, Android, Sense UI and iOS).
-
-By default the control renders for intuitive and easy usage, but you can also customize it's parameters (width, height,...). For more info see the wiki.
-
-See demo here: http://demo.mobiscroll.com
-
-More features and details to follow...
-
-Tested on iOS4, Android 2.2, Android 2.3, Chrome, Safari, Firefox, IE9. Please submit issues, and compatibility problems with other devices.
-
-If you like it, spread the word!
-
-For the latest info follow us on Twitter http://twitter.com/#!/mobiscroll !
-Like us on Facebook http://www.facebook.com/pages/Mobiscroll/226962304011802 !
-
-It'd be cool to see how you're using Mobiscroll!
-================================================
-
-We're looking at showcasing some of the best work on http://mobiscroll.com . Feel free to let us know on twitter @mobiscroll!
+## Usage
+```javascript
+$('#date').scroller({
+  theme: 'ios',  // options: ios / ios-classic / android-ics / android-ics light / android / sense-ui
+  lang: 'zh_CN', // options: zh_CN (default: Englishhhh)
+  preset: 'date', // options  date / time / datetime
+  onClose: function(),
+  onSelect: function(),
+  onCancel: function()
+});
+```
 
 Changelog 1.7.5
 ===============
