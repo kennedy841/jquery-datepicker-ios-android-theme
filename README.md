@@ -5,6 +5,7 @@ Mobiscroll
 This is a fork from brodybits, thanks.
 
 What's new:
+
 1. IOS8 style support (Breathing the fresh air once again)
 2. Multilanguage (Simplified Chinese added)
 
