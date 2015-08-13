@@ -37,7 +37,7 @@
         */
         this.enable = function() {
             s.disabled = false;
-            if ($(elm).is(':input'))
+            if ($(elm).is('input'))
                 $(elm).prop('disabled', false);
         }
 
@@ -83,7 +83,7 @@
         */
         this.disable = function() {
             s.disabled = true;
-            if ($(elm).is(':input'))
+            if ($(elm).is('input'))
                 $(elm).prop('disabled', true);
         }
 
@@ -320,7 +320,7 @@
             var v = this.formatResult();
             this.val = v;
             this.values = this.temp.slice(0);
-            if (input && $(elm).is(':input')) $(elm).val(v).change();
+            if (input && $(elm).is('input')) $(elm).val(v).change();
         }
 
         /**
@@ -583,8 +583,8 @@
             });
 
             // Disable inputs to prevent bleed through (Android bug)
-            $(':input:not(:disabled)').addClass('dwtd');
-            $(':input').prop('disabled', true);
+            $('input:not(:disabled)').addClass('dwtd');
+            $('input').prop('disabled', true);
             // Show
             dwo.show().off('click').on('click', function() {
                 that.hide()
@@ -656,7 +656,7 @@
         this.init();
 
         // Set element readonly, save original state
-        if ($(elm).is(':input') && s.showOnFocus)
+        if ($(elm).is('input') && s.showOnFocus)
             $(elm).data('dwro', $(elm).prop('readonly')).prop('readonly', true);
 
         // Init show datewheel
@@ -1084,7 +1084,7 @@
                 return this.each(function () {
                     if (scrollers[this.id]) {
                         $(this).unbind('focus.dw').removeClass('scroller');
-                        if ($(this).is(':input'))
+                        if ($(this).is('input'))
                             $(this).prop('readonly', $(this).data('dwro'));
                         delete scrollers[this.id];
                     }
@@ -1106,4 +1106,4 @@
 
     $.scroller = new Scroller(null, null, defaults);
 
-})(jQuery);
+})($);
