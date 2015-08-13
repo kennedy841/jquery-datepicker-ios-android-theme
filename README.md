@@ -8,6 +8,7 @@ What's new:
 
 1. IOS8 style support (Breathing the fresh air once again)
 2. Multilanguage (Simplified Chinese added)
+3. Fix a bunch of bugs (See below)
 
 Please check demo_without_jqueryui.html for more details.
 
@@ -42,6 +43,21 @@ It'd be cool to see how you're using Mobiscroll!
 ================================================
 
 We're looking at showcasing some of the best work on http://mobiscroll.com . Feel free to let us know on twitter @mobiscroll!
+
+Changelog 1.7.5
+===============
+
+Bugfixes
+--------
+
+  * Avoid CSS selector conflicts
+  
+  * Full screen blackdrop warranty
+
+Enhancements
+------------
+
+  * Zepto compatible
 
 Changelog 1.7
 ===============
