@@ -797,7 +797,8 @@
                 secText: '秒',
                 setText: '确定',
                 cancelText: '取消',
-                ampm: false
+                ampm: false,
+                dateOrder: 'yyyyMMdd'
             }
         },
 
