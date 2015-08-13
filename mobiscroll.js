@@ -661,7 +661,7 @@
             $(elm).data('dwro', $(elm).prop('readonly')).prop('readonly', true);
 
         // Init show datewheel
-        $(elm).addClass('scroller').unbind('focus.dw').bind('focus.dw', function (e) {
+        $(elm).addClass('scroller').off('click').on('click', function (e) {
             if (s.showOnFocus)
                 that.show();
         });
@@ -865,7 +865,10 @@
                     dw.hide().appendTo('body');
 
                     function getY(e) {
-                        return touch ? e.originalEvent.changedTouches[0].pageY : e.pageY;
+                        return touch ? 
+                            e.originalEvent ? 
+                            e.originalEvent.changedTouches[0].pageY : e.changedTouches[0].pageY
+                            : e.pageY;
                     }
 
                     function calc(t, val, anim, orig) {
