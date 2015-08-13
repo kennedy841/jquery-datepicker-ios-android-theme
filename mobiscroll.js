@@ -634,7 +634,8 @@
             h = dw.outerHeight();
             dw.css({ left: (ww - w) / 2, top: st + (wh - h) / 2 });
             dwo.height(0);
-            dwo.height($(document).height());
+            dwo.height('100%');
+            // dwo.height($(document).height());
         }
 
         /**
