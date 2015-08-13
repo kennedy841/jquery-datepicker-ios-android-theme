@@ -354,8 +354,172 @@
     background:-ms-linear-gradient(#94c840,#3c7500);
     background:-o-linear-gradient(#94c840,#3c7500);
 }
-/* iOS Skin */
+/* iOS8 Skin */
 .ios {
+    padding: 0;
+    background: #FFF;
+    font-family: HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue";
+    font-weight: lighter;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0 !important;
+    top: initial !important;
+    width: 100% !important;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 0;
+    /*height: 200px;*/
+    padding: 10px 0;
+}
+.ios .dwwc, .ios .dwwl, .ios .dww, .ios .dwb {
+    background: none;
+}
+.ios .dwc {
+    margin: 0;
+    padding: 30px 10px 1px 10px;
+}
+.ios .dwhl {
+    padding: 10px 10px;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+.ios .dwwc.dwrc {
+    width: 100% !important;
+    box-sizing: border-box;
+    display: flex;
+}
+.ios .dwwl.dwrc {
+    flex: 1;
+}
+.ios .dww.dwrc {
+    width: initial;
+    box-sizing: border-box;
+}
+.ios .dwv {
+    padding: 15px;
+    border-bottom: 2px solid #31b6e7;
+    font-size: 18px;
+}
+.ios .dwwl {
+    margin: 0 2px;
+}
+.ios .dww {
+    border: 0;
+}
+.ios .dww li {
+    color: #312828;
+    font-size: 18px;
+    text-shadow: none;
+}
+.ios .dwwo {
+    background: none;
+    background: -webkit-gradient(linear,left bottom,left top,from(#FFF),color-stop(0.52,rgba(245, 245, 245, 0)),color-stop(0.48,rgba(245, 245, 245, 0)),to(#FFF));
+    background: -webkit-linear-gradient(#FFF,rgba(245, 245, 245, 0)52%,rgba(245, 245, 245, 0)48%,#FFF); 
+    background: -moz-linear-gradient(#FFF,rgba(245,245,245,0)52%,rgba(245,245,245,0)48%,#FFF);
+    background: linear-gradient(#FFF,rgba(245, 245, 245, 0)52%,rgba(245, 245, 245, 0)48%,#FFF); 
+}
+.ios .dwwb {
+    background: #292829;
+    color: #292829;
+    font-size: 1px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.ios .dwwb:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+    color: #7e7e7e;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    content: '';
+}
+.ios .dwwbp:after {
+    border-color: transparent transparent #7e7e7e transparent;
+}
+.ios .dwwbm:after {
+    border-color: #7e7e7e transparent transparent transparent;
+}
+.ios .dwwl .dwb-a {
+    background: #292829;
+}
+.ios .dwwbp.dwb-a:after {
+    /*border-color: transparent transparent #319abd transparent;*/
+}
+.ios .dwwbm.dwb-a:after {
+    /*border-color: #319abd transparent transparent transparent;*/
+}
+.ios .dwwol {
+    height: 28px;
+    border-top: none;
+    border-bottom: none;
+    margin-top: -15px;
+    display: block;
+    /*border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    width: 110%;*/
+}
+.ios .dwwol::before {
+    content: '';
+    position: absolute;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+    height: 100%;
+    width: 150%;
+    left: -30px;
+}
+.ios .dwbc {
+    border-top: 1px solid #424542;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    top: -50px;
+    background-color: #F9F9F9;
+    text-align: right;
+}
+.ios .dwb {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: none;
+    color: #000;
+}
+.ios .dwb-a {
+    /*background: #29799c;*/
+}
+.ios .dwbw {
+    text-align: inherit;
+    width: initial;
+    display: inline-block;
+    padding: 0 10px;
+    /*float: right;*/
+}
+.ios .dwbw .dwb {
+}
+.ios .dwb-s .dwb {
+    font-weight: bold;
+}
+.ios .dwbw.dwb-s {
+    float: right;
+}
+.ios .dwbw.dwb-c {
+    float: left;
+}
+/* iOS Classic Skin */
+.ios-classic {
     padding: 40px 10px 10px 10px;
     border: 1px solid #2d3034;
     background: #50515d;
@@ -368,13 +532,13 @@
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
 }
-.ios .dwv {
+.ios-classic .dwv {
     display: none;
 }
-.ios .dwwc {
+.ios-classic .dwwc {
     background: transparent;
 }
-.ios .dwwl {
+.ios-classic .dwwl {
     margin: 4px 0;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
@@ -384,7 +548,7 @@
     background: -ms-linear-gradient(#2c2c38 0%,#cbcce0 35%, #cbcce0 65%,#2c2c38 100%);
     background: -o-linear-gradient(#2c2c38 0%,#cbcce0 35%, #cbcce0 65%,#2c2c38 100%);
 }
-.ios .dww {
+.ios-classic .dww {
     margin: 0 3px;
     background: #fff;
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #333),color-stop(0.10, #999),color-stop(0.30, #fff),color-stop(0.70, #fff),color-stop(0.90, #999),color-stop(1, #333));
@@ -395,30 +559,30 @@
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
 }
-.ios .dwpm .dww {
+.ios-classic .dwpm .dww {
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #333),color-stop(0.48, #fff),color-stop(0.52, #fff),color-stop(1, #333));
     background: -moz-linear-gradient(#000 0%,#fff 48%,#fff 52%,#000 100%);
     background: -ms-linear-gradient(#000 0%,#fff 48%,#fff 52%,#000 100%);
     background: -o-linear-gradient(#000 0%,#fff 48%,#fff 52%,#000 100%);
 }
-.ios .dwpm .dwwl {
+.ios-classic .dwpm .dwwl {
     margin: 4px 2px;
 }
-.ios .dwpm .dww {
+.ios-classic .dwpm .dww {
     margin: 0;
     border: 0;
 }
-.ios .dww li {
+.ios-classic .dww li {
     color: #000;
     font-size: 20px;
     font-weight: bold;
     text-align: right;
     text-shadow: none;
 }
-.ios .dwwo {
+.ios-classic .dwwo {
     display: none;
 }
-.ios .dwwol {
+.ios-classic .dwwol {
     height: 28px;
     padding: 1px;
     margin-top: -16px;
@@ -435,7 +599,7 @@
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
     filter: alpha(opacity=50);
 }
-.ios .dwbc {
+.ios-classic .dwbc {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -449,7 +613,7 @@
     background: -o-linear-gradient(#b1bccf 0%,#889ab5 50%,#8093b0 50%,#6e83a4 100%);
     border-bottom: 1px solid #2d3034;
 }
-.ios .dwb {
+.ios-classic .dwb {
     margin: 0 5px;
     display: inline-block;
     font-size: 12px;
@@ -465,7 +629,7 @@
     -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.5);
     -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
-.ios .dwb-a {
+.ios-classic .dwb-a {
     border: 1px solid #394f76;
     background: #2461e6;
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #4c6b9f),color-stop(0.5, #49689d),color-stop(0.5, #5a76a6),color-stop(1, #8fa4c4));
@@ -473,7 +637,7 @@
     background: -ms-linear-gradient(#8fa4c4 0%,#5a76a6 50%,#49689d 50%,#4c6b9f 100%);
     background: -o-linear-gradient(#8fa4c4 0%,#5a76a6 50%,#49689d 50%,#4c6b9f 100%);
 }
-.ios .dwwb {
+.ios-classic .dwwb {
     color: #fff;
     border: 0;
     background: #3f4e68;
@@ -482,18 +646,18 @@
     background: -ms-linear-gradient(#c7d1e2 0%,#808ea6 50%,#75859f 50%,#3f4e68 100%);
     background: -o-linear-gradient(#c7d1e2 0%,#808ea6 50%,#75859f 50%,#3f4e68 100%);
 }
-.ios .dwwl .dwb-a {
+.ios-classic .dwwl .dwb-a {
     background: #252c36;
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #252c36),color-stop(0.5, #171e28),color-stop(0.5, #272e38),color-stop(1, #6b6e75));
     background: -moz-linear-gradient(#6b6e75 0%,#272e38 50%,#171e28 50%,#252c36 100%);
     background: -ms-linear-gradient(#6b6e75 0%,#272e38 50%,#171e28 50%,#252c36 100%);
     background: -o-linear-gradient(#6b6e75 0%,#272e38 50%,#171e28 50%,#252c36 100%);
 }
-.ios .dwb-s {
+.ios-classic .dwb-s {
     float: right;
     text-align: right;
 }
-.ios .dwb-c {
+.ios-classic .dwb-c {
     float: left;
     text-align: left;
 }

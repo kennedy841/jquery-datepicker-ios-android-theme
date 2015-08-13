@@ -586,7 +586,9 @@
             $(':input:not(:disabled)').addClass('dwtd');
             $(':input').prop('disabled', true);
             // Show
-            dwo.show();
+            dwo.show().off('click').on('click', function() {
+                that.hide()
+            });
             dw.attr('class', 'dw ' + s.theme).show();
             visible = true;
             // Set sizes
@@ -779,15 +781,42 @@
                 return true;
             }
         },
+        langs = {
+            'zh_CN': {
+                monthNames: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+                monthNamesShort: ['一','二','三','四','五','六','七','八','九','十','十一','十二'],
+                dayNames: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期七'],
+                dayNamesShort: ['周一', '周二', '周三', '周四', '周五', '周六', '周七'],
+                dateFormat: 'yyyy-mm-dd',
+                monthText: '月份',
+                dayText: '日',
+                yearText: '年',
+                hourText: '时',
+                minuteText: '分',
+                secText: '秒',
+                setText: '确定',
+                cancelText: '取消',
+                ampm: false
+            }
+        },
 
         methods = {
             init: function (options) {
                 if (options === undefined) options = {};
                 var defs = {};
+                var lang = langs[options.lang] || {}
                 //options.mode = $.inArray(options.mode, ['scroller', 'clickpick', 'mixed']) == -1 ? 'scroller' : options.mode;
                 // Skin dependent defaults
                 switch (options.theme) {
                     case 'ios':
+                        defs.dateOrder = 'MMdyy';
+                        defs.rows = 7;
+                        defs.height = 32;
+                        defs.width = 55;
+                        defs.showValue = false;
+                        defs.showLabel = false;
+                        break;
+                    case 'ios-classic':
                         defs.dateOrder = 'MMdyy';
                         defs.rows = 5;
                         defs.height = 30;
@@ -812,8 +841,7 @@
                     defs.height = 50;
                     defs.rows = 3;
                 }
-
-                var settings = $.extend({}, defaults, defs, options),
+                var settings = $.extend({}, defaults, defs, options, lang),
                     plustap = false,
                     minustap = false;
 

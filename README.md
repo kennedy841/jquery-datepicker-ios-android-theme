@@ -1,6 +1,15 @@
 Mobiscroll
 ==========
 
+## jquery-datepicker-ios-android-theme fork
+This is a fork from brodybits, thanks.
+
+What's new:
+1. IOS8 style support (Breathing the fresh air once again)
+2. Multilanguage (Simplified Chinese added)
+
+Please check demo_without_jqueryui.html for more details.
+
 ## scroll-picker fork
 
 The mobiscroll is a great project, and I wanted to use the mobiscroller together with a JQueryMobile anchor button instead of an input field. Unfortunately the scroller is hard-coded to bind to the focus event and it will take some modifications to bind to the click event instead. As a quick workaround, I was able to put the date/time input elements on a hidden page and then bind the anchor button click events to open the scroller.
@@ -33,6 +42,28 @@ It'd be cool to see how you're using Mobiscroll!
 
 We're looking at showcasing some of the best work on http://mobiscroll.com . Feel free to let us know on twitter @mobiscroll!
 
+Changelog 1.7
+===============
+
+Bugfixes
+--------
+
+  * nahnnn
+
+Enhancements
+------------
+
+  * IOS8 style
+
+  * Multilanguage
+
+  * Click blackdrop to close
+
+Notes
+-----
+
+  * original `ios` theme is renamed to `ios-classic`
+
 Changelog 1.6
 ===============
 
@@ -44,7 +75,7 @@ Bugfixes
   * Fixed: When using custom wheels, parseValue function defaults to first value on the wheel, if cannot parse the input value to a valid wheel value
 
 Enhancements
-============
+------------
 
   * Added: _showLabel_ option - show/hide labels on the top of the wheels, default is *true*
 
