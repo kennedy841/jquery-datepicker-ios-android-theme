@@ -6,10 +6,7 @@ This is a fork from brodybits, thanks.
 
 What's new:
 
-1. IOS8 style support (Breathing the fresh air once again)
-2. Multilanguage (Simplified Chinese added)
-3. Zepto compatible
-4. Fix a bunch of bugs (See below)
+1. Italian support
 
 Please check [Demo Page](https://htmlpreview.github.io/?https://github.com/chuyik/jquery-datepicker-ios-android-theme/blob/scroll-picker/demo_without_jqueryui.html) and [demo_without_jqueryui.html](./demo_without_jqueryui.html) for more details.
 
@@ -28,7 +25,7 @@ Please check [Demo Page](https://htmlpreview.github.io/?https://github.com/chuyi
 ```javascript
 $('#date').scroller({
   theme: 'ios',  // options: ios / ios-classic / android-ics / android-ics light / android / sense-ui
-  lang: 'zh_CN', // options: zh_CN (default: Englishhhh)
+  lang: 'it_IT', // options: it_IT (default: Englishhhh)
   preset: 'date', // options  date / time / datetime
   onClose: function(),
   onSelect: function(),
