@@ -813,11 +813,11 @@
                 minuteText: 'Minuti',
                 secText: 'Secondi',
                 ampmText: '&nbsp;',
-                dateFormat: 'yyyy-mm-dd',
+                dateFormat: 'dd-mm-yyyy',
                 setText: 'Seleziona',
                 cancelText: 'Annulla',
                 ampm: false,
-                dateOrder: 'yyyyMMdd'
+                dateOrder: 'ddMMyyyy'
             }
         },
 
