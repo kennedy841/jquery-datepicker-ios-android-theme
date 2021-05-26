@@ -799,6 +799,25 @@
                 cancelText: '取消',
                 ampm: false,
                 dateOrder: 'yyyyMMdd'
+            },
+            'it_IT': {
+                monthNames: ['Gennaio','Febbario','Marzo','Aprile','Marzo','Giugno', 'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'],
+                monthNamesShort: ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+                dayNames: ['Domenica', 'Lunedi', 'Martedi', 'Mercoledi', 'Giovedi', 'Venerdi', 'Sabato'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+                shortYearCutoff: '+10',
+                monthText: 'Mesi',
+                dayText: 'Giorni',
+                yearText: 'Anni',
+                hourText: 'Ore',
+                minuteText: 'Minuti',
+                secText: 'Secondi',
+                ampmText: '&nbsp;',
+                dateFormat: 'yyyy-mm-dd',
+                setText: 'Seleziona',
+                cancelText: 'Annulla',
+                ampm: false,
+                dateOrder: 'yyyyMMdd'
             }
         },
 
